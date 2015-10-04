@@ -6,12 +6,13 @@ Die Onkel Zoom API ist als JSON Webserivce angelegt, bei dem alle Ressourcen üb
 ## API-URL
 http://api.onkel-zoom.com/api.php
 
-## Verfügbare Services
+## Available Services
 - [Account/Get](#accountget)
 - [Offer/Get](#offerget)
 - [Offer/Get/All](#offergetall)
 - [Offer/Update](#offerupdate)
 - [Offer/Add](#offeradd)
+- [Return Codes](#status-return-codes)
 
 ## Account/Get
 > Erhalten Sie Informationen zu Ihren Account-Daten
@@ -29,7 +30,7 @@ $request_get_account_info = array(
 ```
 
 Field | Description
------ | -----------
+:----- | :-----------
 COMPANY |Firmenname
 FIRSTNAME | Vorname
 LASTNAME | Nachname
@@ -46,7 +47,7 @@ OFFERS | Eingestellte Angebote
 > Erstellen Sie ein neues Angebot für den Onkel Zoom Marktplatz direkt aus Ihrem Shop-System heraus.
 
 Field | Description
------ | -----------
+:----- | :-----------
 *PRODUCT_EAN | EAN-Code
 
 *required
@@ -78,7 +79,7 @@ Array(
 ```
 
 Field | Description
------ | -----------
+:----- | :-----------
 OFFER_ID | Unique Offer-ID
 OFFER_LABEL | Productname
 OFFER_EAN | EAN-Code (14 Digits)
@@ -91,8 +92,8 @@ OFFER_DATE_END | end daten
 > Get all you recent Marketplace Offers including Clickouts
 
 Field | Description
------ | -----------
-START | Start-Wert der Anfrage (Für Navigation notwendig)
+:----- | :-----------
+START | Start-Wert der Anfrage (Für Navigation notwendig)
 LIMIT | Items to return. Default: 10 Items, Max. 50 Items
 ORDER_BY | Sortierung nach Kriterium<br>Mögliche Werte:<br>*DATE_ADD*: Erstellungsdatum<br>*DATE_MOD*: Aktualisierungsdatum<br>*DATE_END*: Ablaufdatum<br>*NAME*: Produktname<br>*PRICE*: Preis
 ORDER_DESC | DESC (descending), ASC (ascending)
@@ -140,7 +141,7 @@ Array(
 ```
 
 Field | Description
------ | -----------
+:----- | :-----------
 TOTAL_OFFERS | Gesamtanzahl der Angebote
 TOTAL_CLICKS | Anzahl der Klicks aller angezeigter Angebote
 DATA | Array of Offers
@@ -152,12 +153,11 @@ DATA | Array of Offers
  OFFER_LAST_MOD | Letzte Aktualisierung des Angebots
  OFFER_DATE_END | Ablaufdatum des Angebots
 
-
 ## Offer/Update
 > Aktualisieren Sie ein bestehendes Marktplatz-Angebot
 
 Field | Description
------ | -----------
+:----- | :-----------
 *PRODUCT_EAN | EAN-Code
 PRODUCT_PRICE | New Price for your Offer without Delivery Costs
 PRODUCT_LINK | Shop Deeplink
@@ -199,7 +199,7 @@ Array(
 ```
 
 Field | Description
------ | -----------
+:----- | :-----------
 OFFER_ID | Unique Offer-ID
 OFFER_LABEL | Productname
 OFFER_EAN | EAN-Code (14 Digits)
@@ -212,7 +212,7 @@ OFFER_DATE_END | end daten
 > Erstellen Sie ein neues Angebot für den Onkel Zoom Marktplatz direkt aus Ihrem Shop-System heraus.
 
 Field | Description
------ | -----------
+:----- | :-----------
 *PRODUCT_EAN | EAN-Code
 *PRODUCT_PRICE | New Price for your Offer without Delivery Costs
 PRODUCT_PRICE_OLD | previous price without delivery costs
@@ -271,7 +271,7 @@ Array(
 ```
 
 Field | Description
------ | -----------
+:----- | :-----------
 OFFER_ID | Unique Offer-ID
 OFFER_LABEL | Productname
 OFFER_EAN | EAN-Code (14 Digits)
@@ -286,11 +286,9 @@ OFFER_DATE_END | end daten
 Code | Description
 :----- | :-----------
 200 | Request successful
- | 
 403 | Access denied. Missing Auth-Data
 404 | Access denied. Wrong Auth-Data.
 405 | Access denied. Token doesn’t match.
- | 
 501 | Service not available
 503 | Missing Parameter
 505 | No Data available
