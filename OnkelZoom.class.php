@@ -18,13 +18,13 @@
 		This Class will help you to communicate with the Onkel Zoom Marketplace API
 
 	Functions:
-		- Add new Marketplace Offers 					SERVICENAME: Offer/Add
-		- Update single Marketplace Offer 				SERVICENAME: Offer/Update
+		- Add new Marketplace Offers 				SERVICENAME: Offer/Add
+		- Update single Marketplace Offer 			SERVICENAME: Offer/Update
 		- Get List of your Marketplace Offers 			SERVICENAME: Offer/Get/All
 		- Get a single Marketplace-Offer by ID 			SERVICENAME: Offer/Get
-		- Get your Account Details 						SERVICENAME: Account/Get
-		- Get single Deal-Details						SERVICENAME: Deal/Get (in process)
-		- Get List of your Deals						SERVICENAME: Deal/Get/All (in process)
+		- Get your Account Details 				SERVICENAME: Account/Get
+		- Get single Deal-Details				SERVICENAME: Deal/Get (in process)
+		- Get List of your Deals				SERVICENAME: Deal/Get/All (in process)
 
 		- More Services to come...
 
