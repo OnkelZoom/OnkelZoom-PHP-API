@@ -299,5 +299,5 @@ Code | Description
 
 ##Copyright:
 Zoom Social Commerce GmbH<br>
-Stanlay Forker <forker@zoom-sc.com><br>
+Stanlay Forker<br>
 http://www.onkel-zoom.com
