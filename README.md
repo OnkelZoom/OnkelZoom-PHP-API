@@ -1,9 +1,9 @@
 OnkelZoom-PHP-API
 ==================
 
-Die Onkel Zoom API ist als JSON Webserivce angelegt, bei dem alle Ressourcen über eine zentrale URL angesprochen werden. Alle API-Anfragen werden als POST Request mit JSON formatiertem Body an die Service-URL gesendet.
+[Onkel Zoom](http://www.onkel-zoom.com) offers all Premium-Vendor the ability to control ther offers directly via an API. The API is designed as JSON Webserice in which all resources are accessed via a central URL. All API request are sent to the Service URL as POST request.
 
-## API-URL
+## Request URL
 http://api.onkel-zoom.com/api.php
 
 ## Available Services
@@ -15,7 +15,7 @@ http://api.onkel-zoom.com/api.php
 - [Return Codes](#status-return-codes)
 
 ## Account/Get
-> Erhalten Sie Informationen zu Ihren Account-Daten
+> Get your Vendor Account Data
 
 **Sample Request**
 ```
@@ -44,7 +44,7 @@ VISITS | Besucher Ihres Profils
 OFFERS | Eingestellte Angebote
 
 ## Offer/Get
-> Erstellen Sie ein neues Angebot für den Onkel Zoom Marktplatz direkt aus Ihrem Shop-System heraus.
+> Get a single Marketplace Offer by EAN including currect Clickouts
 
 Field | Description
 :----- | :-----------
@@ -154,7 +154,8 @@ DATA | Array of Offers
  OFFER_DATE_END | Ablaufdatum des Angebots
 
 ## Offer/Update
-> Aktualisieren Sie ein bestehendes Marktplatz-Angebot
+> Update an existing marketplace offer
+> If you only provide the EAN-Code only the modification date and the end date of the offers are updated
 
 Field | Description
 :----- | :-----------
@@ -209,7 +210,7 @@ OFFER_LAST_MOD | Last modification date
 OFFER_DATE_END | end daten
 
 ## Offer/Add
-> Erstellen Sie ein neues Angebot für den Onkel Zoom Marktplatz direkt aus Ihrem Shop-System heraus.
+> Add a new Marketplace Offer to Onkel Zoom
 
 Field | Description
 :----- | :-----------
@@ -281,7 +282,7 @@ OFFER_LAST_MOD | Last modification date
 OFFER_DATE_END | end daten
 
 ## Status Return Codes
-> Zurückgelieferte Status-Codes geben Aufschluss über die API-Anfrage.
+> All Request return a Status-Code. See list above for explanation
 
 Code | Description
 :----- | :-----------
