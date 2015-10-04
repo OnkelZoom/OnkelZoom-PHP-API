@@ -81,6 +81,19 @@ Array(
 )
 ```
 ## Offer/Update
+> Aktualisieren Sie ein bestehendes Marktplatz-Angebot
+
+Field | Description
+----- | -----------
+*PRODUCT_EAN | EAN-Code
+PRODUCT_PRICE | New Price for your Offer without Delivery Costs
+PRODUCT_LINK | Shop Deeplink
+DELIVERY_VALUE | Notes on Shipping
+DELIVERY_PRICE | delivery costs
+AVAILABLE | Availability:<br>1: Yes<br>0: No
+
+*required
+
 **Sample Request**
 ```
 $request_update_offer = array(
@@ -95,6 +108,35 @@ $request_update_offer = array(
   )
 );
 ```
+
+**Sample Response**
+
+```
+Array(
+	[STATUS] => 200
+	[DATA] => Array(
+		[OFFER_ID] => 99999
+		[OFFER_LABEL] => Productname
+		[OFFER_EAN] => 12345678900000
+		[OFFER_LINK] => http://www.your-shop.com/product-deeplink.html
+		[OFFER_CLICKOUTS] => 34
+		[OFFER_LAST_MOD] => 2015-10-31 15:00:00
+		[OFFER_DATE_END] => 2015-11-07 15:00:00
+	)
+)
+```
+
+Field | Description
+----- | -----------
+OFFER_ID | Unique Offer-ID
+OFFER_LABEL | Productname
+OFFER_EAN | EAN-Code (14 Digits)
+OFFER_LINK | Shop Deeplink
+OFFER_CLICKOUTS | Count recent Clickouts
+OFFER_LAST_MOD | Last modification date
+OFFER_DATE_END | end daten
+
+
 ## Offer/Add
 > Erstellen Sie ein neues Angebot für den Onkel Zoom Marktplatz direkt aus Ihrem Shop-System heraus.
 
@@ -103,13 +145,13 @@ Field | Description
 *PRODUCT_EAN | EAN-Code
 *PRODUCT_PRICE | New Price for your Offer without Delivery Costs
 PRODUCT_PRICE_OLD | previous price without delivery costs
-PRODUCT_AVAILABLE | Availability<br>Mögliche Werte:<br>1: Yes,  0: No
+PRODUCT_AVAILABLE | Availability:<br>1: Yes<br>0: No
 *PRODUCT_LINK | Shop Deeplink
 DELIVERY_VALUE | Notes on Shipping
 DELIVERY_PRICE | delivery costs
 *TOKEN | MD5 hash of all the parameters incl. API Key
 
-*required Data
+*required
 
 **Sample Request**
 ```
@@ -139,6 +181,7 @@ $request_add_offer["DATA"]["TOKEN"] = md5(
 	strrev(ZOOM_API_KEY)
 );
 ```
+
 **Sample Response**
 
 ```
