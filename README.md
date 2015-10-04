@@ -172,12 +172,12 @@ AVAILABLE | Availability:<br>1: Yes<br>0: No
 $request_update_offer = array(
   "SERVICE"	=> "Offer/Update",
   "DATA"	=> array(
-    "PRODUCT_EAN"     => "000000000000000", // Product EAN-Code. *required
-    "PRODUCT_PRICE" 	=> "12.34", // New product price
-    "PRODUCT_LINK" 		=> "http://www.shop.com/product-deeplink.html", // Deeplink to your Shop
-    "DELIVERY_VALUE" 	=> "Lieferbar innerhalb 1-2 Tage",  // Delivery Notice
-    "DELIVERY_PRICE" 	=> "4.90",  // Delivery Cost
-    "AVAILABLE" 		  => "1"  // Available? 1 = Yes, 0 = No
+    "PRODUCT_EAN"     => "000000000000000",
+    "PRODUCT_PRICE" 	=> "12.34",
+    "PRODUCT_LINK" 		=> "http://www.shop.com/product-deeplink.html",
+    "DELIVERY_VALUE" 	=> "Lieferbar innerhalb 1-2 Tage",
+    "DELIVERY_PRICE" 	=> "4.90",
+    "AVAILABLE" 		  => "1"
   )
 );
 ```
@@ -229,14 +229,14 @@ DELIVERY_PRICE | delivery costs
 $request_add_offer = array(
 "SERVICE"	=> "Offer/Add",
   "DATA"		=> array(
-		"PRODUCT_EAN"		    => "000000000000000", // Product EAN-Code *required
-		"PRODUCT_PRICE" 	  => "12.34", // New price *required
-		"PRODUCT_PRICE_OLD"	=> "43.21", // Old price - can be empty
-		"PRODUCT_AVAILABLE" => "1", // Available? 1 = Yes, 0 = No - can be empty
-		"PRODUCT_LINK" 		  => "http://www.shop.com/product-deeplink.html", // Deeplink to your Shop *required
-		"DELIVERY_VALUE" 	  => "Lieferbar innerhalb 1-2 Tage",  // Delivery Notice - can be empty
-		"DELIVERY_PRICE" 	  => "4.90",  // Delivery Cost - can be empty
-		"TOKEN"             => "" // MD5 HASH FOR ALL YOUR DATA *required
+		"PRODUCT_EAN"		    => "000000000000000",
+		"PRODUCT_PRICE" 	  => "12.34",
+		"PRODUCT_PRICE_OLD"	=> "43.21",
+		"PRODUCT_AVAILABLE" => "1",
+		"PRODUCT_LINK" 		  => "http://www.shop.com/product-deeplink.html",
+		"DELIVERY_VALUE" 	  => "Lieferbar innerhalb 1-2 Tage",
+		"DELIVERY_PRICE" 	  => "4.90",
+		"TOKEN"             => ""
 	)
 );
 
