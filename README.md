@@ -7,11 +7,11 @@ Die Onkel Zoom API ist als JSON Webserivce angelegt, bei dem alle Ressourcen üb
 http://api.onkel-zoom.com/api.php
 
 ## Verfügbare Services
-* Account/Get
-* Offer/Get
-* Offer/Get/All
-* Offer/Update
-* Offer/Add
+- [Account/Get](#accountget)
+- [Offer/Get](#accountget)
+- [Offer/Get/All](#accountget)
+- [Offer/Update](#accountget)
+- [Offer/Add](#accountget)
 
 ## Account/Get
 > Erhalten Sie Informationen zu Ihren Account-Daten
