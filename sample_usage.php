@@ -44,12 +44,12 @@
 		$request_update_offer = array(
 			"SERVICE"	=> "Offer/Update",
 			"DATA"		=> array(
-				"PRODUCT_EAN"		=> "000000000000000",								// Product EAN-Code.				* required
-				"PRODUCT_PRICE" 	=> "12.34",											// New product price
-				"PRODUCT_LINK" 		=> "http://www.shop.com/product-deeplink.html",		// Deeplink to your Shop
-				"DELIVERY_VALUE" 	=> "Lieferbar innerhalb 1-2 Tage",					// Delivery Notice
-				"DELIVERY_PRICE" 	=> "4.90",											// Delivery Cost
-				"AVAILABLE" 		=> "1"												// Available? 1 = Yes, 0 = No
+				"PRODUCT_EAN"		=> "000000000000000",
+				"PRODUCT_PRICE" 	=> "12.34",
+				"PRODUCT_LINK" 		=> "http://www.shop.com/product-deeplink.html",
+				"DELIVERY_VALUE" 	=> "Lieferbar innerhalb 1-2 Tage",
+				"DELIVERY_PRICE" 	=> "4.90",
+				"AVAILABLE" 		=> "1"
 			)
 		);
 
@@ -57,7 +57,7 @@
 		$request_get_offer = array(
 			"SERVICE"	=> "Offer/Get",
 			"DATA"		=> array(
-				"PRODUCT_EAN"	=> "000000000000000"									// Product EAN-Code. 				* required
+				"PRODUCT_EAN"	=> "000000000000000"
 			)
 		);
 
@@ -65,10 +65,10 @@
 		$request_get_all_offer = array(
 			"SERVICE"	=> "Offer/Get/All",
 			"DATA"		=> array(
-				"START"			=> "0",													// START FROM THIS ENTRY
-				"LIMIT"			=> "10",												// RESULTS TO RETURN. Default: 10, Max: 50
-				"ORDER_BY"		=> "DATE_MOD",											// SORTING BY THIS VALUE
-				"ORDER_DESC"	=> "DESC"												// SORT DIRECTION. DESC = Descending, ASC = Ascending
+				"START"			=> "0",
+				"LIMIT"			=> "10",
+				"ORDER_BY"		=> "DATE_MOD",
+				"ORDER_DESC"		=> "DESC"
 			)
 		);
 
@@ -76,14 +76,14 @@
 		$request_add_offer = array(
 			"SERVICE"	=> "Offer/Add",
 			"DATA"		=> array(
-				"PRODUCT_EAN"		=> "",												// Product EAN-Code. 					* required
-				"PRODUCT_PRICE" 	=> "12.34",											// New price 							* required
-				"PRODUCT_PRICE_OLD"	=> "43.21",											// Old price 							- can be empty
-				"PRODUCT_AVAILABLE" => "1",												// Available? 1 = Yes, 0 = No 			- can be empty
-				"PRODUCT_LINK" 		=> "http://www.shop.com/product-deeplink.html",		// Deeplink to your Shop 				* required
-				"DELIVERY_VALUE" 	=> "Lieferbar innerhalb 1-2 Tage",					// Delivery Notice 						- can be empty
-				"DELIVERY_PRICE" 	=> "4.90",											// Delivery Cost 						- can be empty
-				"TOKEN"				=> ""												// MD5 HASH FOR ALL YOUR DATA 			* required
+				"PRODUCT_EAN"		=> "",
+				"PRODUCT_PRICE" 	=> "12.34",
+				"PRODUCT_PRICE_OLD"	=> "43.21",
+				"PRODUCT_AVAILABLE" 	=> "1",
+				"PRODUCT_LINK" 		=> "http://www.shop.com/product-deeplink.html",
+				"DELIVERY_VALUE" 	=> "Lieferbar innerhalb 1-2 Tage",
+				"DELIVERY_PRICE" 	=> "4.90",
+				"TOKEN"			=> ""
 			)
 		);
 
