@@ -296,3 +296,8 @@ Code | Description
 506 | Insert failed. Maybe wrong Data given
 507 | Update failed. Maybe wrong Data given
 508 | No Product for this EAN
+
+##Copyright:
+Zoom Social Commerce GmbH
+Stanlay Forker <forker@zoom-sc.com>
+http://www.onkel-zoom.com
