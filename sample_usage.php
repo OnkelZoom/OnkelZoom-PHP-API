@@ -40,7 +40,7 @@
 			"SERVICE"	=> "Account/Get"
 		);
 
-		# Update your Offer by EAN
+		# Update Offer by EAN
 		$request_update_offer = array(
 			"SERVICE"	=> "Offer/Update",
 			"DATA"		=> array(
@@ -53,7 +53,7 @@
 			)
 		);
 
-		# Get single Offer by EAN
+		# Get Offer by EAN
 		$request_get_offer = array(
 			"SERVICE"	=> "Offer/Get",
 			"DATA"		=> array(
@@ -61,7 +61,7 @@
 			)
 		);
 
-		# Get all you Offers
+		# Get all Offers
 		$request_get_all_offer = array(
 			"SERVICE"	=> "Offer/Get/All",
 			"DATA"		=> array(
