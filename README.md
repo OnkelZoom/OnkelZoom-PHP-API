@@ -284,7 +284,7 @@ OFFER_DATE_END | end daten
 > Zurückgelieferte Status-Codes geben Aufschluss über die API-Anfrage.
 
 Code | Description
------ | -----------
+:----- | :-----------
 200 | Request successful
  | 
 403 | Access denied. Missing Auth-Data
