@@ -13,7 +13,7 @@ http://api.onkel-zoom.com/api.php
 - [Offer/Update](#offerupdate)
 - [Offer/Add](#offeradd)
 
-### Account/Get
+## Account/Get
 > Erhalten Sie Informationen zu Ihren Account-Daten
 
 **Sample Request**
@@ -279,3 +279,21 @@ OFFER_LINK | Shop Deeplink
 OFFER_CLICKOUTS | Count recent Clickouts
 OFFER_LAST_MOD | Last modification date
 OFFER_DATE_END | end daten
+
+## Status Return Codes
+> Zurückgelieferte Status-Codes geben Aufschluss über die API-Anfrage.
+
+Code | Description
+----- | -----------
+200 | Request successful
+ | 
+403 | Access denied. Missing Auth-Data
+404 | Access denied. Wrong Auth-Data.
+405 | Access denied. Token doesn’t match.
+ | 
+501 | Service not available
+503 | Missing Parameter
+505 | No Data available
+506 | Insert failed. Maybe wrong Data given
+507 | Update failed. Maybe wrong Data given
+508 | No Product for this EAN
