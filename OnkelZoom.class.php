@@ -51,33 +51,33 @@
 		public function __construct($_email, $_apiKey, $_apiUrl = ZOOM_API_ENDPOINT){
 
 			if($_email != '' && $_apiKey != ''){
-            	$this->email = $_email;
-            	$this->apiKey = $_apiKey;
-            	$this->apiUrl = $_apiUrl;
-            } else {
-            	return false;
-            }
+            			$this->email = $_email;
+            			$this->apiKey = $_apiKey;
+            			$this->apiUrl = $_apiUrl;
+            		} else {
+            			return false;
+            		}
 		}
 
 		public function setConvertToUTF8($_convert_to_utf8 = false){
-	        if($_convert_to_utf8 != ''){
-	            $this->convert_to_utf8 = $_convert_to_utf8;
-	        } else {
-	        	return false;
-	        }
-	    }
+	        	if($_convert_to_utf8 != ''){
+	            		$this->convert_to_utf8 = $_convert_to_utf8;
+	        	} else {
+	        		return false;
+	        	}
+	    	}
 
-    	private function convertToUTF8($_array){
-        	foreach($_array AS $key => $val){
-	            if(is_array($val)){
-	            	$val = $this->convertToUTF8($val);
-	            } else {
-	            	$val = utf8_encode($val);
-	            }
-	            $_array[$key] = $val;
-	        }
-	        return $_array;
-    	}
+    		private function convertToUTF8($_array){
+	        	foreach($_array AS $key => $val){
+	        		if(is_array($val)){
+	        			$val = $this->convertToUTF8($val);
+	        		} else {
+	        			$val = utf8_encode($val);
+	        		}
+	        		$_array[$key] = $val;
+		        }
+		        return $_array;
+	    	}
 
 		public function request($_data){
 			if($_data) {
@@ -91,32 +91,30 @@
 						"httpbody" 	=> $data_string
 					);
 
-	                curl_setopt($ch, CURLOPT_URL, $this->apiUrl);
-	                curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-	                	'X-OZ-API-Key: '.base64_encode($this->apiKey),
-	                	'X-OZ-API-Vendor: '.base64_encode($this->email)
-	                	)
-	                );
-	                curl_setopt($ch, CURLOPT_POST, 1);
-	                curl_setopt($ch, CURLOPT_POSTFIELDS, $bodyStr);
-	                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	                curl_setopt($ch, CURLOPT_ENCODING, 'gzip');
-	                curl_setopt($ch, CURLOPT_VERBOSE, 1);
-
-	                $exec 	= curl_exec($ch);
-	                $result = json_decode($exec,true);
-	                curl_close($ch);
-
-	                return $result;
-
-	            } else {
-	            	return false;
-	            }
-
-	        } else {
-	        	return false;
-	        }
-
-	    }
+			                curl_setopt($ch, CURLOPT_URL, $this->apiUrl);
+			                curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			                	'X-OZ-API-Key: '.base64_encode($this->apiKey),
+			                	'X-OZ-API-Vendor: '.base64_encode($this->email)
+			                	)
+			                );
+			                curl_setopt($ch, CURLOPT_POST, 1);
+			                curl_setopt($ch, CURLOPT_POSTFIELDS, $bodyStr);
+			                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			                curl_setopt($ch, CURLOPT_ENCODING, 'gzip');
+			                curl_setopt($ch, CURLOPT_VERBOSE, 1);
+		
+			                $exec 	= curl_exec($ch);
+			                $result = json_decode($exec,true);
+			                curl_close($ch);
+		
+			                return $result;
+					
+				} else {
+		            		return false;
+				}
+			} else {
+	        		return false;
+			}
+		}
 	}
 ?>
