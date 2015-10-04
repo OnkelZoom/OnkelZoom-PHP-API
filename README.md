@@ -14,7 +14,7 @@ http://api.onkel-zoom.com/api.php
 - [Offer/Add](#offeradd)
 - [Return Codes](#status-return-codes)
 
-More Services to come
+More Services will come soon.
 
 ## Account/Get
 > Get your Vendor Account Data
