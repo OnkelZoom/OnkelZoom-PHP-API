@@ -28,7 +28,7 @@ Sample JSON-Response:
 ## Offer/Get
 ```
 $request_get_offer = array(
-  "SERVICE"	=> "Offer/Get",
+  "SERVICE"		=> "Offer/Get",
   "DATA"		=> array(
     "PRODUCT_EAN"	=> "000000000000000" // Product EAN-Code. *required
   )
@@ -40,7 +40,7 @@ $request_get_offer = array(
 ```
 $request_params = array(
   "SERVICE"	=> "Offer/Get/All",
-  "DATA"    => array(
+  "DATA"    	=> array(
     "START"       => "0",
     "LIMIT"       => "10",
     "ORDER_BY"    => "DATE_MOD",
@@ -85,22 +85,22 @@ Array(
 ```
 $request_update_offer = array(
   "SERVICE"	=> "Offer/Update",
-  "DATA"		=> array(
-    "PRODUCT_EAN"		  => "000000000000000", // Product EAN-Code. *required
+  "DATA"	=> array(
+    "PRODUCT_EAN"     => "000000000000000", // Product EAN-Code. *required
     "PRODUCT_PRICE" 	=> "12.34", // New product price
     "PRODUCT_LINK" 		=> "http://www.shop.com/product-deeplink.html", // Deeplink to your Shop
-		"DELIVERY_VALUE" 	=> "Lieferbar innerhalb 1-2 Tage",  // Delivery Notice
-		"DELIVERY_PRICE" 	=> "4.90",  // Delivery Cost
-		"AVAILABLE" 		  => "1"  // Available? 1 = Yes, 0 = No
-	)
+    "DELIVERY_VALUE" 	=> "Lieferbar innerhalb 1-2 Tage",  // Delivery Notice
+    "DELIVERY_PRICE" 	=> "4.90",  // Delivery Cost
+    "AVAILABLE" 		  => "1"  // Available? 1 = Yes, 0 = No
+  )
 );
 ```
 ## Offer/Add
 **Sample Request**
 ```
 $request_add_offer = array(
-	"SERVICE"	=> "Offer/Add",
-	"DATA"		=> array(
+  "SERVICE"	=> "Offer/Add",
+  "DATA"		=> array(
 		"PRODUCT_EAN"		    => "000000000000000", // Product EAN-Code *required
 		"PRODUCT_PRICE" 	  => "12.34", // New price *required
 		"PRODUCT_PRICE_OLD"	=> "43.21", // Old price - can be empty
@@ -108,7 +108,19 @@ $request_add_offer = array(
 		"PRODUCT_LINK" 		  => "http://www.shop.com/product-deeplink.html", // Deeplink to your Shop *required
 		"DELIVERY_VALUE" 	  => "Lieferbar innerhalb 1-2 Tage",  // Delivery Notice - can be empty
 		"DELIVERY_PRICE" 	  => "4.90",  // Delivery Cost - can be empty
-		"TOKEN"				      => "" // MD5 HASH FOR ALL YOUR DATA *required
+		"TOKEN"             => "" // MD5 HASH FOR ALL YOUR DATA *required
 	)
+);
+
+# BUILD THE MD5 HASH TOKEN
+$request_add_offer["DATA"]["TOKEN"] = md5(
+  $request_add_offer["DATA"]["PRODUCT_EAN"] .
+	$request_add_offer["DATA"]["PRODUCT_PRICE"] .
+	$request_add_offer["DATA"]["PRODUCT_PRICE_OLD"] .
+	$request_add_offer["DATA"]["PRODUCT_AVAILABLE"] .
+	$request_add_offer["DATA"]["PRODUCT_LINK"] .
+	$request_add_offer["DATA"]["DELIVERY_VALUE"] .
+	$request_add_offer["DATA"]["DELIVERY_PRICE"] .
+	strrev(ZOOM_API_KEY)
 );
 ```
