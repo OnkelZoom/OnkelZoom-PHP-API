@@ -100,15 +100,16 @@ $request_update_offer = array(
 
 Field | Description
 ----- | -----------
-*PRODUCT_EAN | 14-stelliger EAN-Code zum Produkt
-*PRODUCT_PRICE | Preis des Angebots exkl. Nebenkosten (Versand etc.)
-PRODUCT_PRICE_OLD | Alter Preis des Angebots exkl. Nebenkosten (Versand etc.)
-PRODUCT_AVAILABLE | Verfügbarkeit<br>Mögliche Werte:<br>1: Ja, verfügbar 0: Nein, nicht verfügbar
-*PRODUCT_LINK | Shop-URL zum Angebot
-DELIVERY_VALUE | Hinweise zur Lieferzeit
-DELIVERY_PRICE | Lieferkosten
-*TOKEN | MD5-Hash aus allen Parametern inkl. API-Key
+*PRODUCT_EAN | EAN-Code
+*PRODUCT_PRICE | New Price for your Offer without Delivery Costs
+PRODUCT_PRICE_OLD | previous price without delivery costs
+PRODUCT_AVAILABLE | Availability<br>Mögliche Werte:<br>1: Yes,  0: No
+*PRODUCT_LINK | Shop Deeplink
+DELIVERY_VALUE | Notes on Shipping
+DELIVERY_PRICE | delivery costs
+*TOKEN | MD5 hash of all the parameters incl. API Key
 
+*required Data
 
 **Sample Request**
 ```
@@ -157,10 +158,10 @@ Array(
 
 Field | Description
 ----- | -----------
-OFFER_ID | Eindeutige Angebots-ID
-OFFER_LABEL | Name des Produkts
-OFFER_EAN | Produkt EAN-Code (14-stellig)
-OFFER_LINK | Direkter Shop-Link
-OFFER_CLICKOUTS | Anzahl der bisherigen Clickouts
-OFFER_LAST_MOD | Letzte Aktualisierung des Angebots
-OFFER_DATE_END | Ablaufdatum des Angebots
+OFFER_ID | Unique Offer-ID
+OFFER_LABEL | Productname
+OFFER_EAN | EAN-Code (14 Digits)
+OFFER_LINK | Shop Deeplink
+OFFER_CLICKOUTS | Count recent Clickouts
+OFFER_LAST_MOD | Last modification date
+OFFER_DATE_END | end daten
