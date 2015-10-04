@@ -8,12 +8,12 @@ http://api.onkel-zoom.com/api.php
 
 ## Verfügbare Services
 - [Account/Get](#accountget)
-- [Offer/Get](#accountget)
-- [Offer/Get/All](#accountget)
-- [Offer/Update](#accountget)
-- [Offer/Add](#accountget)
+- [Offer/Get](#offerget)
+- [Offer/Get/All](#offergetall)
+- [Offer/Update](#offerupdate)
+- [Offer/Add](#offeradd)
 
-## Account/Get
+### Account/Get
 > Erhalten Sie Informationen zu Ihren Account-Daten
 
 **Sample Request**
