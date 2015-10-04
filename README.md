@@ -298,6 +298,6 @@ Code | Description
 508 | No Product for this EAN
 
 ##Copyright:
-Zoom Social Commerce GmbH
-Stanlay Forker <forker@zoom-sc.com>
+Zoom Social Commerce GmbH<br>
+Stanlay Forker <forker@zoom-sc.com><br>
 http://www.onkel-zoom.com
