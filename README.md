@@ -96,10 +96,24 @@ $request_update_offer = array(
 );
 ```
 ## Offer/Add
+> Erstellen Sie ein neues Angebot für den Onkel Zoom Marktplatz direkt aus Ihrem Shop-System heraus.
+
+Field | Description
+----- | -----------
+*PRODUCT_EAN | 14-stelliger EAN-Code zum Produkt
+*PRODUCT_PRICE | Preis des Angebots exkl. Nebenkosten (Versand etc.)
+PRODUCT_PRICE_OLD | Alter Preis des Angebots exkl. Nebenkosten (Versand etc.)
+PRODUCT_AVAILABLE | Verfügbarkeit<br>Mögliche Werte:<br>1: Ja, verfügbar 0: Nein, nicht verfügbar
+*PRODUCT_LINK | Shop-URL zum Angebot
+DELIVERY_VALUE | Hinweise zur Lieferzeit
+DELIVERY_PRICE | Lieferkosten
+*TOKEN | MD5-Hash aus allen Parametern inkl. API-Key
+
+
 **Sample Request**
 ```
 $request_add_offer = array(
-  "SERVICE"	=> "Offer/Add",
+"SERVICE"	=> "Offer/Add",
   "DATA"		=> array(
 		"PRODUCT_EAN"		    => "000000000000000", // Product EAN-Code *required
 		"PRODUCT_PRICE" 	  => "12.34", // New price *required
@@ -124,3 +138,29 @@ $request_add_offer["DATA"]["TOKEN"] = md5(
 	strrev(ZOOM_API_KEY)
 );
 ```
+**Sample Response**
+
+```
+Array(
+	[STATUS] => 200
+	[DATA] => Array(
+		[OFFER_ID] => 99999
+		[OFFER_LABEL] => Productname
+		[OFFER_EAN] => 12345678900000
+		[OFFER_LINK] => http://www.your-shop.com/product-deeplink.html
+		[OFFER_CLICKOUTS] => 34
+		[OFFER_LAST_MOD] => 2015-10-31 15:00:00
+		[OFFER_DATE_END] => 2015-11-07 15:00:00
+	)
+)
+```
+
+Field | Description
+----- | -----------
+OFFER_ID | Eindeutige Angebots-ID
+OFFER_LABEL | Name des Produkts
+OFFER_EAN | Produkt EAN-Code (14-stellig)
+OFFER_LINK | Direkter Shop-Link
+OFFER_CLICKOUTS | Anzahl der bisherigen Clickouts
+OFFER_LAST_MOD | Letzte Aktualisierung des Angebots
+OFFER_DATE_END | Ablaufdatum des Angebots
