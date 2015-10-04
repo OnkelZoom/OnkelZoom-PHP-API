@@ -1,7 +1,7 @@
 OnkelZoom-PHP-API
 ==================
 
-[Onkel Zoom](http://www.onkel-zoom.com) offers all Premium-Vendor the ability to control ther offers directly via an API. The API is designed as JSON Webserice in which all resources are accessed via a central URL. All API request are sent to the Service URL as POST request.
+[Onkel Zoom](http://www.onkel-zoom.com) offers all Premium-Vendors the ability to control ther offers directly via an API. The API is designed as JSON Webserice in which all resources are accessed via a central URL. All API request are sent to the Service URL as POST request.
 
 ## Request URL
 http://api.onkel-zoom.com/api.php
