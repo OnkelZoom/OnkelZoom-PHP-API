@@ -42,10 +42,10 @@
 
 	class OnkelZoom {
 
-		private $email 				= '';
-		private $apiKey				= '';
-		private $apiUrl				= '';
-		private $debug				= FALSE;
+		private $email 			= '';
+		private $apiKey			= '';
+		private $apiUrl			= '';
+		private $debug			= FALSE;
 		private $convert_to_utf8	= FALSE;
 
 		public function __construct($_email, $_apiKey, $_apiUrl = ZOOM_API_ENDPOINT){
