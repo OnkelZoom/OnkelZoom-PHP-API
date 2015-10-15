@@ -167,6 +167,7 @@ PRODUCT_LINK | Shop Deeplink
 DELIVERY_VALUE | Notes on Shipping
 DELIVERY_PRICE | delivery costs
 AVAILABLE | Availability:<br>1: Yes<br>0: No
+PICKUP | Local Pickup:<br>1: Yes<br>0: No
 
 *required
 
@@ -177,10 +178,11 @@ $request_update_offer = array(
   "DATA"	=> array(
     "PRODUCT_EAN"     => "000000000000000",
     "PRODUCT_PRICE" 	=> "12.34",
-    "PRODUCT_LINK" 		=> "http://www.shop.com/product-deeplink.html",
+    "PRODUCT_LINK" 	=> "http://www.shop.com/product-deeplink.html",
     "DELIVERY_VALUE" 	=> "Lieferbar innerhalb 1-2 Tage",
     "DELIVERY_PRICE" 	=> "4.90",
-    "AVAILABLE" 		  => "1"
+    "AVAILABLE" 	=> "1",
+    "PICKUP" 		=> "0"
   )
 );
 ```
@@ -220,6 +222,7 @@ Field | Description
 *PRODUCT_PRICE | New Price for your Offer without Delivery Costs
 PRODUCT_PRICE_OLD | previous price without delivery costs
 PRODUCT_AVAILABLE | Availability:<br>1: Yes<br>0: No
+PRODUCT_PICKUP | Local Pickup:<br>1: Yes<br>0: No
 *PRODUCT_LINK | Shop Deeplink
 DELIVERY_VALUE | Notes on Shipping
 DELIVERY_PRICE | delivery costs
@@ -232,14 +235,15 @@ DELIVERY_PRICE | delivery costs
 $request_add_offer = array(
 "SERVICE"	=> "Offer/Add",
   "DATA"		=> array(
-		"PRODUCT_EAN"		    => "000000000000000",
-		"PRODUCT_PRICE" 	  => "12.34",
+		"PRODUCT_EAN"		=> "000000000000000",
+		"PRODUCT_PRICE" 	=> "12.34",
 		"PRODUCT_PRICE_OLD"	=> "43.21",
-		"PRODUCT_AVAILABLE" => "1",
-		"PRODUCT_LINK" 		  => "http://www.shop.com/product-deeplink.html",
-		"DELIVERY_VALUE" 	  => "Lieferbar innerhalb 1-2 Tage",
-		"DELIVERY_PRICE" 	  => "4.90",
-		"TOKEN"             => ""
+		"PRODUCT_AVAILABLE" 	=> "1",
+		"PRODUCT_PICKUP" 	=> "1",
+		"PRODUCT_LINK" 		=> "http://www.shop.com/product-deeplink.html",
+		"DELIVERY_VALUE" 	=> "Lieferbar innerhalb 1-2 Tage",
+		"DELIVERY_PRICE" 	=> "4.90",
+		"TOKEN"             	=> ""
 	)
 );
 
